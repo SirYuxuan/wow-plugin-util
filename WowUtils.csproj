@@ -6,6 +6,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Fody" Version="6.8.2" />
@@ -15,6 +21,7 @@
 	</ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icon.png" />
     <Folder Include="Properties\" />
   </ItemGroup>
 

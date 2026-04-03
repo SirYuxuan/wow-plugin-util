@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WowUtils"
         mc:Ignorable="d"
-        Title="魔兽世界插件管理工具" Height="880" Width="1150" 
+        Title="魔兽世界插件管理工具"
+        Height="880"
+        Width="1150"
+        Icon="Icon.png"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid Margin="10">
@@ -16,7 +19,10 @@
         </Grid.RowDefinitions>
 
         <!-- 目录选择 -->
-        <GroupBox Grid.Row="0" Header="魔兽世界安装目录" Padding="10" Margin="0,0,0,10">
+        <GroupBox Grid.Row="0"
+                Header="魔兽世界安装目录"
+                Padding="10"
+                Margin="0,0,0,10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -28,80 +34,116 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox x:Name="txtWowPath" Grid.Row="0" Grid.Column="0" 
-                         IsReadOnly="True" VerticalAlignment="Center" 
-                         Padding="5" FontSize="13"/>
-                <Button x:Name="btnGlobalSearch" Grid.Row="0" Grid.Column="1" 
-                        Content="🔍 全局搜索" Width="100" Margin="5,0,0,0" Height="32"
-                        Click="BtnGlobalSearch_Click" Padding="5" FontWeight="SemiBold"
+                <TextBox x:Name="txtWowPath"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                         IsReadOnly="True"
+                        VerticalAlignment="Center"
+                         Padding="5"
+                        FontSize="13"/>
+                <Button x:Name="btnGlobalSearch"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Content="🔍 全局搜索"
+                        Width="100"
+                        Margin="5,0,0,0"
+                        Height="32"
+                        Click="BtnGlobalSearch_Click"
+                        Padding="5"
+                        FontWeight="SemiBold"
                         ToolTip="在所有磁盘搜索魔兽世界安装目录">
                     <Button.Style>
                         <Style TargetType="Button">
-                            <Setter Property="Background" Value="#FF2196F3"/>
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background"
+                                    Value="#FF2196F3"/>
+                            <Setter Property="Foreground"
+                                    Value="White"/>
+                            <Setter Property="BorderThickness"
+                                    Value="0"/>
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
-                                        <Border Background="{TemplateBinding Background}" 
-                                                CornerRadius="4" 
+                                        <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="4"
                                                 BorderThickness="{TemplateBinding BorderThickness}">
-                                            <ContentPresenter HorizontalAlignment="Center" 
+                                            <ContentPresenter HorizontalAlignment="Center"
                                                               VerticalAlignment="Center"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#FF1976D2"/>
+                                <Trigger Property="IsMouseOver"
+                                        Value="True">
+                                    <Setter Property="Background"
+                                            Value="#FF1976D2"/>
                                 </Trigger>
-                                <Trigger Property="IsEnabled" Value="False">
-                                    <Setter Property="Background" Value="#FFBDBDBD"/>
+                                <Trigger Property="IsEnabled"
+                                        Value="False">
+                                    <Setter Property="Background"
+                                            Value="#FFBDBDBD"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button x:Name="btnBrowse" Grid.Row="0" Grid.Column="2" 
-                        Content="📁 浏览" Width="80" Margin="5,0,0,0" Height="32"
-                        Click="BtnBrowse_Click" Padding="5" FontWeight="SemiBold">
+                <Button x:Name="btnBrowse"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Content="📁 浏览"
+                        Width="80"
+                        Margin="5,0,0,0"
+                        Height="32"
+                        Click="BtnBrowse_Click"
+                        Padding="5"
+                        FontWeight="SemiBold">
                     <Button.Style>
                         <Style TargetType="Button">
-                            <Setter Property="Background" Value="#FF757575"/>
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background"
+                                    Value="#FF757575"/>
+                            <Setter Property="Foreground"
+                                    Value="White"/>
+                            <Setter Property="BorderThickness"
+                                    Value="0"/>
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
-                                        <Border Background="{TemplateBinding Background}" 
-                                                CornerRadius="4" 
+                                        <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="4"
                                                 BorderThickness="{TemplateBinding BorderThickness}">
-                                            <ContentPresenter HorizontalAlignment="Center" 
+                                            <ContentPresenter HorizontalAlignment="Center"
                                                               VerticalAlignment="Center"/>
                                         </Border>
                                     </ControlTemplate>
                                 </Setter.Value>
                             </Setter>
                             <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#FF616161"/>
+                                <Trigger Property="IsMouseOver"
+                                        Value="True">
+                                    <Setter Property="Background"
+                                            Value="#FF616161"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
                 </Button>
-                
-                <TextBlock x:Name="txtPathStatus" Grid.Row="1" Grid.Column="0" 
-                           Grid.ColumnSpan="3" Margin="0,5,0,0" 
-                           FontSize="12" Foreground="Green"/>
+
+                <TextBlock x:Name="txtPathStatus"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                        Margin="0,5,0,0"
+                           FontSize="12"
+                        Foreground="Green"/>
             </Grid>
         </GroupBox>
 
         <!-- 功能标签页 -->
-        <TabControl Grid.Row="1" Margin="0,0,0,10">
+        <TabControl Grid.Row="1"
+                Margin="0,0,0,10">
             <!-- 清理插件标签页 -->
-            <TabItem Header="清理插件" FontSize="14">
+            <TabItem Header="清理插件"
+                    FontSize="14">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="145"/>
@@ -110,155 +152,223 @@
                     </Grid.RowDefinitions>
 
                     <!-- 选择要删除的文件夹 -->
-                    <GroupBox Grid.Row="0" Header="选择要清理的文件夹" Padding="10" Margin="0,0,0,10">
+                    <GroupBox Grid.Row="0"
+                            Header="选择要清理的文件夹"
+                            Padding="10"
+                            Margin="0,0,0,10">
                         <StackPanel>
-                            <CheckBox x:Name="chkCache" Content="Cache（缓存文件）" IsChecked="True" Margin="0,0,0,5"/>
-                            <CheckBox x:Name="chkFonts" Content="Fonts（字体文件）" IsChecked="True" Margin="0,0,0,5"/>
-                            <CheckBox x:Name="chkInterface" Content="Interface（插件界面）" IsChecked="True" Margin="0,0,0,5"/>
-                            <CheckBox x:Name="chkWTF" Content="WTF（插件配置）" IsChecked="True"/>
+                            <CheckBox x:Name="chkCache"
+                                    Content="Cache（缓存文件）"
+                                    IsChecked="True"
+                                    Margin="0,0,0,5"/>
+                            <CheckBox x:Name="chkFonts"
+                                    Content="Fonts（字体文件）"
+                                    IsChecked="True"
+                                    Margin="0,0,0,5"/>
+                            <CheckBox x:Name="chkInterface"
+                                    Content="Interface（插件界面）"
+                                    IsChecked="True"
+                                    Margin="0,0,0,5"/>
+                            <CheckBox x:Name="chkWTF"
+                                    Content="WTF（插件配置）"
+                                    IsChecked="True"/>
                         </StackPanel>
                     </GroupBox>
 
                     <!-- 备份选项 -->
-                    <GroupBox Grid.Row="1" Header="备份选项" Padding="10" Margin="0,0,0,10">
-                        <CheckBox x:Name="chkBackup" Content="删除前创建备份（备份文件将保存为 ZIP 格式）" IsChecked="True"/>
+                    <GroupBox Grid.Row="1"
+                            Header="备份选项"
+                            Padding="10"
+                            Margin="0,0,0,10">
+                        <CheckBox x:Name="chkBackup"
+                                Content="删除前创建备份（备份文件将保存为 ZIP 格式）"
+                                IsChecked="True"/>
                     </GroupBox>
 
                     <!-- 操作按钮 -->
-                    <GroupBox Grid.Row="2" Header="操作" Padding="10">
+                    <GroupBox Grid.Row="2"
+                            Header="操作"
+                            Padding="10">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="55"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            
-                            <Button x:Name="btnClean" Grid.Row="0" Content="🗑️ 一键清理插件" 
-                                    Height="55" FontSize="16" FontWeight="Bold" 
-                                    Click="BtnClean_Click" Cursor="Hand"
+
+                            <Button x:Name="btnClean"
+                                    Grid.Row="0"
+                                    Content="🗑️ 一键清理插件"
+                                    Height="55"
+                                    FontSize="16"
+                                    FontWeight="Bold"
+                                    Click="BtnClean_Click"
+                                    Cursor="Hand"
                                     VerticalAlignment="Top">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                <GradientStop Color="#FF66BB6A" Offset="0"/>
-                                                <GradientStop Color="#FF4CAF50" Offset="1"/>
-                                            </LinearGradientBrush>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderThickness" Value="0"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" 
-                                                        CornerRadius="6" 
-                                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                                        BorderBrush="{TemplateBinding BorderBrush}">
-                                                    <ContentPresenter HorizontalAlignment="Center" 
-                                                                      VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background">
-                                                <Setter.Value>
-                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                        <GradientStop Color="#FF81C784" Offset="0"/>
-                                                        <GradientStop Color="#FF66BB6A" Offset="1"/>
-                                                    </LinearGradientBrush>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Setter Property="Effect">
-                                                <Setter.Value>
-                                                    <DropShadowEffect Color="#FF4CAF50" BlurRadius="10" 
-                                                                      ShadowDepth="0" Opacity="0.6"/>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsPressed" Value="True">
-                                            <Setter Property="Background">
-                                                <Setter.Value>
-                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                        <GradientStop Color="#FF388E3C" Offset="0"/>
-                                                        <GradientStop Color="#FF2E7D32" Offset="1"/>
-                                                    </LinearGradientBrush>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsEnabled" Value="False">
-                                            <Setter Property="Background" Value="#FFBDBDBD"/>
-                                            <Setter Property="Foreground" Value="#FF757575"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                        
-                        <!-- 统计和常用操作 -->
-                        <Grid Grid.Row="1" Margin="0,10,0,0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="10"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            
-                            <!-- 统计信息 -->
-                            <GroupBox Grid.Column="0" Header="清理统计" Padding="8">
-                                <StackPanel>
-                                    <TextBlock x:Name="txtCleanStats" FontSize="11" Foreground="Gray"
-                                               Text="本次会话：未清理" TextWrapping="Wrap"/>
-                                    <TextBlock x:Name="txtLastCleanTime" FontSize="11" Foreground="Gray"
-                                               Text="上次清理：无记录" Margin="0,3,0,0" TextWrapping="Wrap"/>
-                                </StackPanel>
-                            </GroupBox>
-                            
-                            <!-- 常用操作 -->
-                            <GroupBox Grid.Column="2" Header="常用操作" Padding="8">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <Button x:Name="btnOpenWowFolder" Content="📂 打开目录" Width="100" Height="32"
-                                            Click="BtnOpenWowFolder_Click"
-                                            ToolTip="打开魔兽世界安装目录">
-                                        <Button.Style>
-                                            <Style TargetType="Button">
-                                                <Setter Property="Background" Value="#FF757575"/>
-                                                <Setter Property="Foreground" Value="White"/>
-                                                <Setter Property="BorderThickness" Value="0"/>
-                                                <Setter Property="Template">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush StartPoint="0,0"
+                                                        EndPoint="0,1">
+                                                    <GradientStop Color="#FF66BB6A"
+                                                            Offset="0"/>
+                                                    <GradientStop Color="#FF4CAF50"
+                                                            Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Foreground"
+                                                Value="White"/>
+                                        <Setter Property="BorderThickness"
+                                                Value="0"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                                            CornerRadius="6"
+                                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                                            BorderBrush="{TemplateBinding BorderBrush}">
+                                                        <ContentPresenter HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver"
+                                                    Value="True">
+                                                <Setter Property="Background">
                                                     <Setter.Value>
-                                                        <ControlTemplate TargetType="Button">
-                                                            <Border Background="{TemplateBinding Background}" 
-                                                                    CornerRadius="4" 
-                                                                    BorderThickness="{TemplateBinding BorderThickness}">
-                                                                <ContentPresenter HorizontalAlignment="Center" 
-                                                                                  VerticalAlignment="Center"/>
-                                                            </Border>
-                                                        </ControlTemplate>
+                                                        <LinearGradientBrush StartPoint="0,0"
+                                                                EndPoint="0,1">
+                                                            <GradientStop Color="#FF81C784"
+                                                                    Offset="0"/>
+                                                            <GradientStop Color="#FF66BB6A"
+                                                                    Offset="1"/>
+                                                        </LinearGradientBrush>
                                                     </Setter.Value>
                                                 </Setter>
-                                                <Style.Triggers>
-                                                    <Trigger Property="IsMouseOver" Value="True">
-                                                        <Setter Property="Background" Value="#FF616161"/>
-                                                    </Trigger>
-                                                    <Trigger Property="IsEnabled" Value="False">
-                                                        <Setter Property="Background" Value="#FFBDBDBD"/>
-                                                    </Trigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </Button.Style>
-                                    </Button>
-                                </StackPanel>
-                            </GroupBox>
-                        </Grid>
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect Color="#FF4CAF50"
+                                                                BlurRadius="10"
+                                                                          ShadowDepth="0"
+                                                                Opacity="0.6"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed"
+                                                    Value="True">
+                                                <Setter Property="Background">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush StartPoint="0,0"
+                                                                EndPoint="0,1">
+                                                            <GradientStop Color="#FF388E3C"
+                                                                    Offset="0"/>
+                                                            <GradientStop Color="#FF2E7D32"
+                                                                    Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled"
+                                                    Value="False">
+                                                <Setter Property="Background"
+                                                        Value="#FFBDBDBD"/>
+                                                <Setter Property="Foreground"
+                                                        Value="#FF757575"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+
+                            <!-- 统计和常用操作 -->
+                            <Grid Grid.Row="1"
+                                    Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- 统计信息 -->
+                                <GroupBox Grid.Column="0"
+                                        Header="清理统计"
+                                        Padding="8">
+                                    <StackPanel>
+                                        <TextBlock x:Name="txtCleanStats"
+                                                FontSize="11"
+                                                Foreground="Gray"
+                                                   Text="本次会话：未清理"
+                                                TextWrapping="Wrap"/>
+                                        <TextBlock x:Name="txtLastCleanTime"
+                                                FontSize="11"
+                                                Foreground="Gray"
+                                                   Text="上次清理：无记录"
+                                                Margin="0,3,0,0"
+                                                TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </GroupBox>
+
+                                <!-- 常用操作 -->
+                                <GroupBox Grid.Column="2"
+                                        Header="常用操作"
+                                        Padding="8">
+                                    <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center">
+                                        <Button x:Name="btnOpenWowFolder"
+                                                Content="📂 打开目录"
+                                                Width="100"
+                                                Height="32"
+                                                Click="BtnOpenWowFolder_Click"
+                                                ToolTip="打开魔兽世界安装目录">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Background"
+                                                            Value="#FF757575"/>
+                                                    <Setter Property="Foreground"
+                                                            Value="White"/>
+                                                    <Setter Property="BorderThickness"
+                                                            Value="0"/>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="Button">
+                                                                <Border Background="{TemplateBinding Background}"
+                                                                        CornerRadius="4"
+                                                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                                                    <ContentPresenter HorizontalAlignment="Center"
+                                                                                      VerticalAlignment="Center"/>
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver"
+                                                                Value="True">
+                                                            <Setter Property="Background"
+                                                                    Value="#FF616161"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled"
+                                                                Value="False">
+                                                            <Setter Property="Background"
+                                                                    Value="#FFBDBDBD"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+                                    </StackPanel>
+                                </GroupBox>
+                            </Grid>
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
 
             <!-- 配置备份标签页 -->
-            <TabItem Header="配置备份" FontSize="14">
+            <TabItem Header="配置备份"
+                    FontSize="14">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="550"/>
@@ -276,55 +386,83 @@
                         </Grid.RowDefinitions>
 
                         <!-- 账号选择 -->
-                        <GroupBox Grid.Row="0" Header="选择账号" Padding="10" Margin="0,0,0,10">
+                        <GroupBox Grid.Row="0"
+                                Header="选择账号"
+                                Padding="10"
+                                Margin="0,0,0,10">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox x:Name="cmbAccounts" Grid.Column="0" 
-                                          FontSize="13" Padding="5"
+                                <ComboBox x:Name="cmbAccounts"
+                                        Grid.Column="0"
+                                          FontSize="13"
+                                        Padding="5"
                                           SelectionChanged="CmbAccounts_SelectionChanged"/>
-                                <Button x:Name="btnRefreshAccounts" Grid.Column="1" 
-                                        Content="刷新" Width="60" Margin="5,0,0,0"
+                                <Button x:Name="btnRefreshAccounts"
+                                        Grid.Column="1"
+                                        Content="刷新"
+                                        Width="60"
+                                        Margin="5,0,0,0"
                                         Click="BtnRefreshAccounts_Click"/>
                             </Grid>
                         </GroupBox>
 
                         <!-- 搜索框 -->
-                        <GroupBox Grid.Row="1" Header="搜索插件" Padding="10" Margin="0,0,0,10">
+                        <GroupBox Grid.Row="1"
+                                Header="搜索插件"
+                                Padding="10"
+                                Margin="0,0,0,10">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBox x:Name="txtConfigSearch" Grid.Row="0"
+                                <TextBox x:Name="txtConfigSearch"
+                                        Grid.Row="0"
                                          TextChanged="TxtConfigSearch_TextChanged"
-                                         FontSize="13" Padding="5"/>
-                                <TextBlock x:Name="txtConfigStats" Grid.Row="1" 
-                                           Margin="0,5,0,0" FontSize="11" Foreground="Gray"
+                                         FontSize="13"
+                                        Padding="5"/>
+                                <TextBlock x:Name="txtConfigStats"
+                                        Grid.Row="1"
+                                           Margin="0,5,0,0"
+                                        FontSize="11"
+                                        Foreground="Gray"
                                            Text="共 0 个插件配置，已选择 0 个"/>
                             </Grid>
                         </GroupBox>
 
                         <!-- 插件配置列表 -->
-                        <GroupBox Grid.Row="2" Header="插件配置文件" Padding="10" Margin="0,0,0,10">
+                        <GroupBox Grid.Row="2"
+                                Header="插件配置文件"
+                                Padding="10"
+                                Margin="0,0,0,10">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,5">
-                                    <Button Content="全选" Width="60" Margin="0,0,5,0" Click="BtnSelectAll_Click"/>
-                                    <Button Content="全不选" Width="60" Click="BtnSelectNone_Click"/>
+                                <StackPanel Grid.Row="0"
+                                        Orientation="Horizontal"
+                                        Margin="0,0,0,5">
+                                    <Button Content="全选"
+                                            Width="60"
+                                            Margin="0,0,5,0"
+                                            Click="BtnSelectAll_Click"/>
+                                    <Button Content="全不选"
+                                            Width="60"
+                                            Click="BtnSelectNone_Click"/>
                                 </StackPanel>
-                                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                                <ScrollViewer Grid.Row="1"
+                                        VerticalScrollBarVisibility="Auto">
                                     <ItemsControl x:Name="lstConfigs">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
-                                                <CheckBox Content="{Binding Name}" 
-                                                          IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                                          Margin="0,2" FontSize="12"/>
+                                                <CheckBox Content="{Binding Name}"
+                                                          IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                          Margin="0,2"
+                                                        FontSize="12"/>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
@@ -333,47 +471,64 @@
                         </GroupBox>
 
                         <!-- 备份按钮 -->
-                        <Button Grid.Row="3" x:Name="btnBackupConfigs" 
-                                Content="💾 备份选中的配置" Height="45" FontSize="14" FontWeight="Bold"
-                                Click="BtnBackupConfigs_Click" Cursor="Hand">
+                        <Button Grid.Row="3"
+                                x:Name="btnBackupConfigs"
+                                Content="💾 备份选中的配置"
+                                Height="45"
+                                FontSize="14"
+                                FontWeight="Bold"
+                                Click="BtnBackupConfigs_Click"
+                                Cursor="Hand">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background">
                                         <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                <GradientStop Color="#FF42A5F5" Offset="0"/>
-                                                <GradientStop Color="#FF2196F3" Offset="1"/>
+                                            <LinearGradientBrush StartPoint="0,0"
+                                                    EndPoint="0,1">
+                                                <GradientStop Color="#FF42A5F5"
+                                                        Offset="0"/>
+                                                <GradientStop Color="#FF2196F3"
+                                                        Offset="1"/>
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
-                                    <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderThickness" Value="0"/>
+                                    <Setter Property="Foreground"
+                                            Value="White"/>
+                                    <Setter Property="BorderThickness"
+                                            Value="0"/>
                                     <Setter Property="Template">
                                         <Setter.Value>
                                             <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" 
-                                                        CornerRadius="6" 
+                                                <Border Background="{TemplateBinding Background}"
+                                                        CornerRadius="6"
                                                         BorderThickness="{TemplateBinding BorderThickness}">
-                                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                    <ContentPresenter HorizontalAlignment="Center"
                                                                       VerticalAlignment="Center"/>
                                                 </Border>
                                             </ControlTemplate>
                                         </Setter.Value>
                                     </Setter>
                                     <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
+                                        <Trigger Property="IsMouseOver"
+                                                Value="True">
                                             <Setter Property="Background">
                                                 <Setter.Value>
-                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                        <GradientStop Color="#FF64B5F6" Offset="0"/>
-                                                        <GradientStop Color="#FF42A5F5" Offset="1"/>
+                                                    <LinearGradientBrush StartPoint="0,0"
+                                                            EndPoint="0,1">
+                                                        <GradientStop Color="#FF64B5F6"
+                                                                Offset="0"/>
+                                                        <GradientStop Color="#FF42A5F5"
+                                                                Offset="1"/>
                                                     </LinearGradientBrush>
                                                 </Setter.Value>
                                             </Setter>
                                         </Trigger>
-                                        <Trigger Property="IsEnabled" Value="False">
-                                            <Setter Property="Background" Value="#FFBDBDBD"/>
-                                            <Setter Property="Foreground" Value="#FF757575"/>
+                                        <Trigger Property="IsEnabled"
+                                                Value="False">
+                                            <Setter Property="Background"
+                                                    Value="#FFBDBDBD"/>
+                                            <Setter Property="Foreground"
+                                                    Value="#FF757575"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -389,29 +544,49 @@
                         </Grid.RowDefinitions>
 
                         <!-- 备份记录列表 -->
-                        <GroupBox Grid.Row="0" Header="备份记录" Padding="10" Margin="0,0,0,10">
+                        <GroupBox Grid.Row="0"
+                                Header="备份记录"
+                                Padding="10"
+                                Margin="0,0,0,10">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <DataGrid x:Name="dgBackups" Grid.Row="0" AutoGenerateColumns="False" 
-                                          IsReadOnly="True" SelectionMode="Single"
-                                          HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                                <DataGrid x:Name="dgBackups"
+                                        Grid.Row="0"
+                                        AutoGenerateColumns="False"
+                                          IsReadOnly="True"
+                                        SelectionMode="Single"
+                                          HeadersVisibility="Column"
+                                        GridLinesVisibility="Horizontal"
                                           AlternatingRowBackground="#FFF5F5F5"
                                           SelectionChanged="DgBackups_SelectionChanged"
                                           MouseDoubleClick="DgBackups_MouseDoubleClick">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Header="账号" Binding="{Binding Account}" Width="90"/>
-                                        <DataGridTextColumn Header="文件数" Binding="{Binding FileCount}" Width="55"/>
-                                        <DataGridTextColumn Header="大小" Binding="{Binding Size}" Width="70"/>
-                                        <DataGridTextColumn Header="备份时间" Binding="{Binding BackupTime}" Width="135"/>
-                                        <DataGridTextColumn Header="备注" Binding="{Binding Remark}" Width="*"/>
+                                        <DataGridTextColumn Header="账号"
+                                                Binding="{Binding Account}"
+                                                Width="90"/>
+                                        <DataGridTextColumn Header="文件数"
+                                                Binding="{Binding FileCount}"
+                                                Width="55"/>
+                                        <DataGridTextColumn Header="大小"
+                                                Binding="{Binding Size}"
+                                                Width="70"/>
+                                        <DataGridTextColumn Header="备份时间"
+                                                Binding="{Binding BackupTime}"
+                                                Width="135"/>
+                                        <DataGridTextColumn Header="备注"
+                                                Binding="{Binding Remark}"
+                                                Width="*"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
-                                <TextBlock Grid.Row="1" x:Name="txtBackupDetails" 
-                                           Margin="0,5,0,0" TextWrapping="Wrap" 
-                                           FontSize="11" Foreground="Gray"
+                                <TextBlock Grid.Row="1"
+                                        x:Name="txtBackupDetails"
+                                           Margin="0,5,0,0"
+                                        TextWrapping="Wrap"
+                                           FontSize="11"
+                                        Foreground="Gray"
                                            Text="双击备份记录可打开备份文件所在位置。"/>
                             </Grid>
                         </GroupBox>
@@ -423,93 +598,129 @@
                                 <ColumnDefinition Width="10"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" x:Name="btnRestore" 
-                                    Content="⚡ 恢复备份" Height="45" FontSize="14" FontWeight="Bold"
-                                    Click="BtnRestore_Click" Cursor="Hand" IsEnabled="False">
+                            <Button Grid.Column="0"
+                                    x:Name="btnRestore"
+                                    Content="⚡ 恢复备份"
+                                    Height="45"
+                                    FontSize="14"
+                                    FontWeight="Bold"
+                                    Click="BtnRestore_Click"
+                                    Cursor="Hand"
+                                    IsEnabled="False">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background">
                                             <Setter.Value>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                    <GradientStop Color="#FFFFB74D" Offset="0"/>
-                                                    <GradientStop Color="#FFFF9800" Offset="1"/>
+                                                <LinearGradientBrush StartPoint="0,0"
+                                                        EndPoint="0,1">
+                                                    <GradientStop Color="#FFFFB74D"
+                                                            Offset="0"/>
+                                                    <GradientStop Color="#FFFF9800"
+                                                            Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Setter.Value>
                                         </Setter>
-                                        <Setter Property="Foreground" Value="White"/>
-                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Foreground"
+                                                Value="White"/>
+                                        <Setter Property="BorderThickness"
+                                                Value="0"/>
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="Button">
-                                                    <Border Background="{TemplateBinding Background}" 
-                                                            CornerRadius="6" 
+                                                    <Border Background="{TemplateBinding Background}"
+                                                            CornerRadius="6"
                                                             BorderThickness="{TemplateBinding BorderThickness}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                        <ContentPresenter HorizontalAlignment="Center"
                                                                           VerticalAlignment="Center"/>
                                                     </Border>
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
                                         <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger Property="IsMouseOver"
+                                                    Value="True">
                                                 <Setter Property="Background">
                                                     <Setter.Value>
-                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                            <GradientStop Color="#FFFFCA28" Offset="0"/>
-                                                            <GradientStop Color="#FFFFB74D" Offset="1"/>
+                                                        <LinearGradientBrush StartPoint="0,0"
+                                                                EndPoint="0,1">
+                                                            <GradientStop Color="#FFFFCA28"
+                                                                    Offset="0"/>
+                                                            <GradientStop Color="#FFFFB74D"
+                                                                    Offset="1"/>
                                                         </LinearGradientBrush>
                                                     </Setter.Value>
                                                 </Setter>
                                             </Trigger>
-                                            <Trigger Property="IsEnabled" Value="False">
-                                                <Setter Property="Background" Value="#FFBDBDBD"/>
-                                                <Setter Property="Foreground" Value="#FF757575"/>
+                                            <Trigger Property="IsEnabled"
+                                                    Value="False">
+                                                <Setter Property="Background"
+                                                        Value="#FFBDBDBD"/>
+                                                <Setter Property="Foreground"
+                                                        Value="#FF757575"/>
                                             </Trigger>
                                         </Style.Triggers>
                                     </Style>
                                 </Button.Style>
                             </Button>
-                            <Button Grid.Column="2" x:Name="btnDeleteBackup" 
-                                    Content="🗑️ 删除备份" Height="45" FontSize="14" FontWeight="Bold"
-                                    Click="BtnDeleteBackup_Click" Cursor="Hand" IsEnabled="False">
+                            <Button Grid.Column="2"
+                                    x:Name="btnDeleteBackup"
+                                    Content="🗑️ 删除备份"
+                                    Height="45"
+                                    FontSize="14"
+                                    FontWeight="Bold"
+                                    Click="BtnDeleteBackup_Click"
+                                    Cursor="Hand"
+                                    IsEnabled="False">
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background">
                                             <Setter.Value>
-                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                    <GradientStop Color="#FFEF5350" Offset="0"/>
-                                                    <GradientStop Color="#FFF44336" Offset="1"/>
+                                                <LinearGradientBrush StartPoint="0,0"
+                                                        EndPoint="0,1">
+                                                    <GradientStop Color="#FFEF5350"
+                                                            Offset="0"/>
+                                                    <GradientStop Color="#FFF44336"
+                                                            Offset="1"/>
                                                 </LinearGradientBrush>
                                             </Setter.Value>
                                         </Setter>
-                                        <Setter Property="Foreground" Value="White"/>
-                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Foreground"
+                                                Value="White"/>
+                                        <Setter Property="BorderThickness"
+                                                Value="0"/>
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="Button">
-                                                    <Border Background="{TemplateBinding Background}" 
-                                                            CornerRadius="6" 
+                                                    <Border Background="{TemplateBinding Background}"
+                                                            CornerRadius="6"
                                                             BorderThickness="{TemplateBinding BorderThickness}">
-                                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                        <ContentPresenter HorizontalAlignment="Center"
                                                                           VerticalAlignment="Center"/>
                                                     </Border>
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
                                         <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger Property="IsMouseOver"
+                                                    Value="True">
                                                 <Setter Property="Background">
                                                     <Setter.Value>
-                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                            <GradientStop Color="#FFE57373" Offset="0"/>
-                                                            <GradientStop Color="#FFEF5350" Offset="1"/>
+                                                        <LinearGradientBrush StartPoint="0,0"
+                                                                EndPoint="0,1">
+                                                            <GradientStop Color="#FFE57373"
+                                                                    Offset="0"/>
+                                                            <GradientStop Color="#FFEF5350"
+                                                                    Offset="1"/>
                                                         </LinearGradientBrush>
                                                     </Setter.Value>
                                                 </Setter>
                                             </Trigger>
-                                            <Trigger Property="IsEnabled" Value="False">
-                                                <Setter Property="Background" Value="#FFBDBDBD"/>
-                                                <Setter Property="Foreground" Value="#FF757575"/>
+                                            <Trigger Property="IsEnabled"
+                                                    Value="False">
+                                                <Setter Property="Background"
+                                                        Value="#FFBDBDBD"/>
+                                                <Setter Property="Foreground"
+                                                        Value="#FF757575"/>
                                             </Trigger>
                                         </Style.Triggers>
                                     </Style>
@@ -520,7 +731,8 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="设置" FontSize="14">
+            <TabItem Header="设置"
+                    FontSize="14">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -528,52 +740,82 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <GroupBox Grid.Row="0" Header="一键清理保留插件" Padding="10" Margin="0,0,0,10">
+                    <GroupBox Grid.Row="0"
+                            Header="一键清理保留插件"
+                            Padding="10"
+                            Margin="0,0,0,10">
                         <StackPanel>
                             <TextBlock Text="勾选后，一键清理时只保留对应插件的 Interface/AddOns 目录。"
-                                       TextWrapping="Wrap" FontSize="12" Foreground="Gray"/>
+                                       TextWrapping="Wrap"
+                                    FontSize="12"
+                                    Foreground="Gray"/>
                             <TextBlock Text="WTF 配置请使用“配置备份”选项卡处理。"
                                        Margin="0,4,0,0"
-                                       TextWrapping="Wrap" FontSize="11" Foreground="Gray"/>
-                            <TextBlock x:Name="txtAddonSettingsStatus" Margin="0,6,0,0"
+                                       TextWrapping="Wrap"
+                                    FontSize="11"
+                                    Foreground="Gray"/>
+                            <TextBlock x:Name="txtAddonSettingsStatus"
+                                    Margin="0,6,0,0"
                                        Text="请先选择有效的魔兽世界目录。"
-                                       TextWrapping="Wrap" FontSize="11" Foreground="Gray"/>
+                                       TextWrapping="Wrap"
+                                    FontSize="11"
+                                    Foreground="Gray"/>
                         </StackPanel>
                     </GroupBox>
 
-                    <GroupBox Grid.Row="1" Header="插件列表" Padding="10" Margin="0,0,0,10">
+                    <GroupBox Grid.Row="1"
+                            Header="插件列表"
+                            Padding="10"
+                            Margin="0,0,0,10">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <TextBox x:Name="txtAddonSearch" Grid.Row="0"
+                            <TextBox x:Name="txtAddonSearch"
+                                    Grid.Row="0"
                                      TextChanged="TxtAddonSearch_TextChanged"
-                                     FontSize="13" Padding="5"
+                                     FontSize="13"
+                                    Padding="5"
                                      ToolTip="搜索插件名称"/>
-                            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,8,0,5">
-                                <Button x:Name="btnRefreshAddons" Content="刷新列表" Width="90" Margin="0,0,5,0"
+                            <StackPanel Grid.Row="1"
+                                    Orientation="Horizontal"
+                                    Margin="0,8,0,5">
+                                <Button x:Name="btnRefreshAddons"
+                                        Content="刷新列表"
+                                        Width="90"
+                                        Margin="0,0,5,0"
                                         Click="BtnRefreshAddons_Click"/>
-                                <Button x:Name="btnProtectAllAddons" Content="筛选全选" Width="90" Margin="0,0,5,0"
+                                <Button x:Name="btnProtectAllAddons"
+                                        Content="筛选全选"
+                                        Width="90"
+                                        Margin="0,0,5,0"
                                         Click="BtnProtectAllAddons_Click"/>
-                                <Button x:Name="btnClearProtectedAddons" Content="筛选清空" Width="90"
+                                <Button x:Name="btnClearProtectedAddons"
+                                        Content="筛选清空"
+                                        Width="90"
                                         Click="BtnClearProtectedAddons_Click"/>
                             </StackPanel>
-                            <TextBlock Grid.Row="2" x:Name="txtAddonStats"
+                            <TextBlock Grid.Row="2"
+                                    x:Name="txtAddonStats"
                                        Text="共 0 个插件，保留 0 个"
-                                       FontSize="11" Foreground="Gray"/>
+                                       FontSize="11"
+                                    Foreground="Gray"/>
                         </Grid>
                     </GroupBox>
 
-                    <GroupBox Grid.Row="2" Header="已安装插件" Padding="10">
+                    <GroupBox Grid.Row="2"
+                            Header="已安装插件"
+                            Padding="10">
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <ItemsControl x:Name="lstProtectedAddons">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <CheckBox Content="{Binding Name}"
                                                   IsChecked="{Binding IsProtected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                  Margin="0,2" FontSize="12"/>
+                                                  Margin="0,2"
+                                                FontSize="12"/>
                                     </DataTemplate>
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
@@ -584,12 +826,18 @@
         </TabControl>
 
         <!-- 日志区域 -->
-        <GroupBox Grid.Row="2" Header="操作日志" Padding="10">
+        <GroupBox Grid.Row="2"
+                Header="操作日志"
+                Padding="10">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <TextBox x:Name="txtLog" IsReadOnly="True" 
-                         TextWrapping="Wrap" VerticalAlignment="Stretch" 
-                         FontFamily="Consolas" FontSize="11" 
-                         Background="#FFF5F5F5" BorderThickness="0"/>
+                <TextBox x:Name="txtLog"
+                        IsReadOnly="True"
+                         TextWrapping="Wrap"
+                        VerticalAlignment="Stretch"
+                         FontFamily="Consolas"
+                        FontSize="11"
+                         Background="#FFF5F5F5"
+                        BorderThickness="0"/>
             </ScrollViewer>
         </GroupBox>
     </Grid>
